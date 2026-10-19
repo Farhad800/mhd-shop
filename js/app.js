@@ -32,3 +32,15 @@ $("send").onclick=()=>{const t=T[L],nm=$("nm").value.trim(),ph=$("ph").value.tri
  const msg=`طلب جديد من موقع ${SHOP_NAME}\n\n${lines.join("\n")}\n\nالمجموع: ${f(sum())} د.ع\n\nالاسم: ${nm}\nالهاتف: ${ph}\nالعنوان: ${ad}${nt?`\nملاحظات: ${nt}`:""}`;
  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank","noopener")};
 let s="ar";try{s=localStorage.getItem("mhdl")||"ar"}catch(e){}setL(T[s]?s:"ar");
+const iE=$("inst"),iB=$("ib"),iT=$("itx");let dP=null;
+const sa=matchMedia("(display-mode: standalone)").matches||navigator.standalone,ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+let seen=false;try{seen=localStorage.getItem("mhdi")==="1"}catch(e){}
+function iTx(){const d=T[L]||T.ar;iT.textContent=ios?d.ia:d.iw}
+function iShow(){if(sa||seen)return;iTx();iE.classList.add("on")}
+$("ix").onclick=()=>{iE.classList.remove("on");try{localStorage.setItem("mhdi","1")}catch(e){}};
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();dP=e;iB.hidden=false;setTimeout(iShow,3000)});
+iB.onclick=async()=>{if(!dP)return;dP.prompt();await dP.userChoice;dP=null;iE.classList.remove("on")};
+addEventListener("appinstalled",()=>iE.classList.remove("on"));
+if(ios)setTimeout(iShow,3000);
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",iTx));
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));

@@ -7,6 +7,8 @@ const SEC=[
 {id:"teapots",ar:"أباريق الشاي",ku:"چایدان",en:"Teapots"},
 {id:"tissues",ar:"المناديل الورقية",ku:"دەستمالێن کاغەزی",en:"Tissues"},
 {id:"cook",ar:"أدوات الطبخ",ku:"ئامێرێن چێشتکرنێ",en:"Cookware & tools"},
+{id:"coffee",ar:"أدوات القهوة",ku:"ئامێرێن قەهوێ",en:"Coffee"},
+{id:"care",ar:"العناية الشخصية",ku:"چاڤدێریا کەسی",en:"Personal care"},
 {id:"hair",ar:"العناية بالشعر",ku:"چاڤدێریا پرچێ",en:"Hair care"},
 {id:"laundry",ar:"الغسيل",ku:"شووشتنا جلکان",en:"Laundry"},
 {id:"fresh",ar:"معطرات الجو",ku:"بێهنخۆشکەر",en:"Air fresheners"},

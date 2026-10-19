@@ -1,7 +1,8 @@
 <!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b0a08">
-<title>MHD | مركز أدوات المطبخ</title><link rel="icon" href="img/mark.png">
+<title>MHD | مركز أدوات المطبخ</title><link rel="icon" href="img/mark.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="MHD"><meta name="application-name" content="MHD">
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0a08;--card:#15130f;--ink:#f4ecd8;--mute:#a79c84;--gold:#d4af5f;--gold2:#a8802f;--line:#2b261c;--grad:linear-gradient(135deg,#e6c872,#b08a34);color-scheme:dark}
@@ -65,6 +66,12 @@ textarea{min-height:76px;resize:vertical}
 .note{color:var(--mute);font-size:14px;margin-top:8px}
 .empty{text-align:center;color:var(--mute);padding:30px 0}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}.map{margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:#14120e}.map iframe{width:100%;height:100%;border:0;display:block}.mapb{display:inline-block;margin-top:12px;background:var(--grad);color:#17120a;font-weight:700;padding:10px 22px;border-radius:12px}
+@font-face{font-family:Rudaw;src:url(fonts/rudaw-regular.woff) format('woff');font-display:swap}
+html[lang=ku] body,html[lang=ku] h1,html[lang=ku] h2,html[lang=ku] h3,html[lang=ku] button,html[lang=ku] input,html[lang=ku] textarea{font-family:Rudaw,Tajawal,Tahoma,sans-serif}
+.inst{position:fixed;inset:auto 12px calc(12px + env(safe-area-inset-bottom,0px)) 12px;z-index:35;max-width:520px;margin:0 auto;display:none;align-items:center;gap:12px;background:#15130f;border:1px solid var(--gold2);border-radius:18px;padding:12px 14px;box-shadow:0 16px 40px -10px rgba(0,0,0,.7)}
+.inst.on{display:flex}.inst img{width:44px;height:44px;border-radius:11px;flex:none}.inst p{flex:1;margin:0;font-size:14.5px;line-height:1.45;color:var(--mute)}.inst p b{display:block;font-size:15.5px;color:var(--ink)}
+.inst .ib{border:0;background:var(--grad);color:#17120a;font-weight:700;border-radius:12px;padding:9px 16px;flex:none}.inst .x{background:none;border:0;color:var(--mute);font-size:20px;padding:4px;flex:none}.inst [hidden]{display:none!important}
+body:has(.bar.on) .inst{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 </style></head><body>
 <header class="top"><div class="wrap"><div class="brand"><img src="img/mark.png" alt=""><span>MHD</span></div>
 <div class="lang"><button data-l="ar">عربي</button><button data-l="ku">کوردی</button><button data-l="en">EN</button></div></div></header>
@@ -83,4 +90,5 @@ textarea{min-height:76px;resize:vertical}
 <label for="nt" data-k="notes"></label><input id="nt">
 <p class="err" id="err" role="alert"></p>
 <button class="send" id="send" data-k="send"></button><p class="note" data-k="note"></p></div></div></div>
-<script src="js/a0.js"></script><script src="js/p0.js"></script><script src="js/p1.js"></script><script src="js/p2.js"></script><script src="js/t.js"></script><script src="js/s.js"></script><script src="js/app.js"></script></body></html>
+<div class="inst" id="inst" role="dialog" aria-labelledby="ih"><img src="img/icon-192.png" alt=""><p><b id="ih" data-k="ih2"></b><span id="itx"></span></p><button class="ib" id="ib" data-k="ib" hidden></button><button class="x" id="ix" aria-label="close">✕</button></div>
+<script src="js/a0.js"></script><script src="js/p0.js"></script><script src="js/p1.js"></script><script src="js/p2.js"></script><script src="js/t.js"></script><script src="js/s.js"></script><script src="js/p3.js"></script><script src="js/app.js"></script></body></html>
