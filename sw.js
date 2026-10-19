@@ -1,4 +1,4 @@
-const C='mhd-v1',A=['/','/index.html','/manifest.webmanifest','/img/logo.png','/img/mark.png','/img/icon-192.png','/fonts/rudaw-regular.woff','/js/a0.js','/js/p0.js','/js/p1.js','/js/p2.js','/js/p3.js','/js/t.js','/js/s.js','/js/app.js'];
+const C='mhd-v2',A=['/','/index.html','/manifest.webmanifest','/img/logo.png','/img/mark.png','/img/icon-192.png','/fonts/rudaw-regular.woff','/js/a0.js','/js/p0.js','/js/p1.js','/js/p2.js','/js/p3.js','/js/t.js','/js/s.js','/js/app.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(A)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==location.origin)return;
